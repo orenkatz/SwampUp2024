@@ -17,13 +17,13 @@ jobs:
     strategy:
       matrix:
         # The repository scanning will be triggered periodically on the following branches.
-        branch: ["oren-dev"]
+        branch: ["main"]
     steps:
       - uses: jfrog/frogbot@v2
         env:
           # [Mandatory]
           # JFrog platform URL
-          JF_URL: ${{ secrets.JF_URL }}
+          # JF_URL: ${{ secrets.JF_URL }}
           JFROG_CLI_LOG_LEVEL: DEBUG
           JF_XRAY_URL: "https://psazuse.jfrog.io"
           JF_ARTIFACTORY_URL: "https://psazuse.jfrog.io"
