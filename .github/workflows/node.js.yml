@@ -33,6 +33,17 @@ jobs:
         JF_URL: ${{ secrets.JF_URL }}
       with:
         oidc-provider-name: oren
+    - name: configure jfrog environment
+      run: jf npm-config --repo-resolve=oren-npm-remote  
     - run: jf npm ci
     - run: jf npm run build --if-present
     - run: jf npm test
+    - name: publish build info
+      run: |
+        jf rt build-collect-env 
+        jf rt build-add-dependencies .
+        jf rt build-add-git
+        jf rt build-publish
+    - name: build scan
+      run: |            
+        jf build-scan build-publish-scan
