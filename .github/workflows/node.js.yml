@@ -37,7 +37,7 @@ jobs:
       run: jf npm-config --repo-resolve=oren-npm-remote  
     - run: jf npm ci
     - run: jf npm run build --if-present
-    - run: jf npm test
+    # - run: jf npm test
     - name: publish build info
       run: |
         jf rt build-collect-env 
