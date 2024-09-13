@@ -5,10 +5,11 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "oren-dev" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "oren-dev" ]
-
+    branches: [ "main" ]
+permissions:
+    id-token: write
 jobs:
   build:
 
@@ -26,6 +27,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Setup JFrog CLI
+      uses: jfrog/setup-jfrog-cli@v4.4.1
+      env:
+        JF_URL: ${{ vars.JF_URL }}
+      with:
+        oidc-provider-name: oren
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
