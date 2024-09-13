@@ -40,10 +40,10 @@ jobs:
     # - run: jf npm test
     - name: publish build info
       run: |
-        jf rt build-collect-env 
+        jf rt build-collect-env oren 1
         jf rt build-add-dependencies .
         jf rt build-add-git
-        jf rt build-publish
+        jf rt build-publish oren 1
     - name: build scan
       run: |            
-        jf build-scan build-publish-scan
+        jf build-scan oren 1
