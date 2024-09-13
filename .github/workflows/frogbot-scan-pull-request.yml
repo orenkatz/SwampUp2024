@@ -1,4 +1,4 @@
-name: "Frogbot Scan Repository"
+name: "Frogbot Scan Pull Request"
 on:
   workflow_dispatch:
   schedule:
@@ -13,6 +13,7 @@ permissions:
 jobs:
   scan-repository:
     runs-on: ubuntu-latest
+    environment: "dev"
     strategy:
       matrix:
         # The repository scanning will be triggered periodically on the following branches.

@@ -13,6 +13,7 @@ permissions:
 jobs:
   scan-repository:
     runs-on: ubuntu-latest
+    environment: "dev"
     strategy:
       matrix:
         # The repository scanning will be triggered periodically on the following branches.
