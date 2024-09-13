@@ -23,7 +23,7 @@ jobs:
         env:
           # [Mandatory]
           # JFrog platform URL
-          # JF_URL: ${{ secrets.JF_URL }}
+          JF_URL: ${{ secrets.JF_URL }}
           JFROG_CLI_LOG_LEVEL: DEBUG
           JF_XRAY_URL: "https://psazuse.jfrog.io"
           JF_ARTIFACTORY_URL: "https://psazuse.jfrog.io"
