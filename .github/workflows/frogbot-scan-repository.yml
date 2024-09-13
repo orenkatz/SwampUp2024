@@ -9,21 +9,24 @@ permissions:
   pull-requests: write
   security-events: write
   # [Mandatory If using OIDC authentication protocol instead of JF_ACCESS_TOKEN]
-  # id-token: write
+  id-token: write
 jobs:
   scan-repository:
     runs-on: ubuntu-latest
+    environment: "dev"
     strategy:
       matrix:
         # The repository scanning will be triggered periodically on the following branches.
-        branch: ["dev"]
+        branch: ["oren-dev"]
     steps:
       - uses: jfrog/frogbot@v2
         env:
           # [Mandatory]
           # JFrog platform URL
           JF_URL: ${{ secrets.JF_URL }}
-
+          JFROG_CLI_LOG_LEVEL: DEBUG
+          JF_XRAY_URL: "https://psazuse.jfrog.io"
+          JF_ARTIFACTORY_URL: "https://psazuse.jfrog.io"
           # [Mandatory if JF_USER and JF_PASSWORD are not provided]
           # JFrog access token with 'read' permissions on Xray service
           # JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
@@ -46,5 +49,5 @@ jobs:
 
         # [Mandatory if using OIDC authentication protocol instead of JF_ACCESS_TOKEN]
         # Insert to oidc-provider-name the 'Provider Name' defined in the OIDC integration configured in the JPD
-        # with:
+        with:
           oidc-provider-name: "oren"

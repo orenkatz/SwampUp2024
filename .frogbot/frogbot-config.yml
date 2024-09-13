@@ -1,0 +1,14 @@
+- params:
+    git:
+      repoName: SwampUp2024
+      branches:
+        - oren-dev
+        - master
+        - main
+    scan:
+      failOnSecurityIssues: false
+      JF_FAIL: false
+      # projects:
+        # - workingDirs:
+            # - path/to/npm/project-1
+            # - path/to/npm/project-2
