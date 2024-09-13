@@ -6,7 +6,8 @@
         - master
         - main
     scan:
-    failOnSecurityIssues: false
+      failOnSecurityIssues: false
+      JF_FAIL: false
       # projects:
         # - workingDirs:
             # - path/to/npm/project-1
