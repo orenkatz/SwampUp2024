@@ -4,6 +4,7 @@
       branches:
         - oren-dev
         - master
+        - main
     scan:
     failOnSecurityIssues: false
       # projects:
