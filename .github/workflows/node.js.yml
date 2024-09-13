@@ -33,6 +33,6 @@ jobs:
         JF_URL: ${{ secrets.JF_URL }}
       with:
         oidc-provider-name: oren
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - run: jf npm ci
+    - run: jf npm run build --if-present
+    - run: jf npm test
