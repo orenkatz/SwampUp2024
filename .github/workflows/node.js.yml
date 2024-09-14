@@ -34,7 +34,7 @@ jobs:
       with:
         oidc-provider-name: oren
     - name: configure jfrog environment
-      run: jf npm-config --repo-resolve=oren-npm-remote  
+      run: jf npm-config --repo-resolve=oren-npm-remote  --repo-deploy=oren-npm-local
     - run: jf npm ci
     - run: jf npm run build --if-present
     # - run: jf npm test
