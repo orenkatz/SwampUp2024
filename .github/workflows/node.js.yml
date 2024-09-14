@@ -38,14 +38,17 @@ jobs:
     - run: jf npm ci
     - run: jf npm run build --if-present
     # - run: jf npm test
-    - name: Docker scan
-      run: jf docker scan https://psazuse.jfrog.io/artifactory/oren-npm-local/Dockerfile
+    # - name: Docker scan
+      # run: jf docker scan https://psazuse.jfrog.io/artifactory/oren-npm-local/Dockerfile
     - name: publish build info
       run: |
+        jf rt npm-install --build-name=oren --build-number=1        
         jf rt build-collect-env oren 1
         jf rt build-add-dependencies .
         jf rt build-add-git
         jf rt build-publish oren 1
+        jf rt npm-publish --build-name=oren --build-number=1
     - name: build scan
       run: |            
         jf build-scan oren 1
+        jf rt build-publish oren 1

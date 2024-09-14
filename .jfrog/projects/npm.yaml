@@ -3,3 +3,6 @@ type: npm
 resolver:
     repo: oren-npm-remote
     serverId: psazuse
+deployer:
+    repo: oren-npm-local
+    serverId: psazuse
