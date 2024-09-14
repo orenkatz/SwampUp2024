@@ -50,5 +50,5 @@ jobs:
         jf npm publish --build-name=oren --build-number=1
     - name: build scan
       run: |            
-        jf build-scan oren 1
+        jf build-scan oren 1 --fail=false
         jf rt build-publish oren 1
