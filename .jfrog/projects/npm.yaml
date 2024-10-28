@@ -1,7 +1,7 @@
 version: 1
 type: npm
 resolver:
-    repo: oren-npm-remote
+    repo: oren-npm-remotenew
     serverId: psazuse
 deployer:
     repo: oren-npm-local
