@@ -14,6 +14,7 @@ permissions:
 jobs:
   build:
      runs-on: ubuntu-latest
+     environment: "dev"
      env:
       OIDC_AUDIENCE: 'github-oren'
       OIDC_PROVIDER: 'oren'
