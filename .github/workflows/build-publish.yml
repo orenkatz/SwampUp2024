@@ -24,7 +24,7 @@ jobs:
       PLATFORM_REPO: 'oren-npm'
      defaults:
       run:
-        working-directory: ./package
+        working-directory: ./images
      steps:
        - name: Checkout
          uses: actions/checkout@v3
